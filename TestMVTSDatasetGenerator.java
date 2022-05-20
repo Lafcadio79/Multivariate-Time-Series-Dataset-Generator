@@ -1,3 +1,10 @@
+/*
+ *
+ * Class for testing the Multivariate Time Series Dataset Generator 
+ *
+ */
+
+
 import java.util.Scanner;
 import java.util.Vector;
 import java.util.Random;
