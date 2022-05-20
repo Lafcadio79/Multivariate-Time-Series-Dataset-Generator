@@ -7,8 +7,12 @@ public class TestMVTSDatasetGenerator {
 		// TODO Auto-generated method stub
 		Scanner in = new Scanner(System.in);
 		
+		// create the objects
 		MVTSDatasetGenerator defdat = new MVTSDatasetGenerator();
+		MVTSDatasetGenerator nodefdat = new MVTSDatasetGenerator(3,30000);
+		MVTSDatasetGenerator df = new MVTSDatasetGenerator(12, 20000);
 		
+		// test 1 - print settings, modify and print again
 		defdat.printParams();
 		
 		defdat.setFeatures(3);
@@ -18,8 +22,8 @@ public class TestMVTSDatasetGenerator {
 		
 		defdat.printParams();
 		
-		MVTSDatasetGenerator nodefdat = new MVTSDatasetGenerator(3,30000);
 		
+		// test 2 - print settings, modify and print again
 		nodefdat.printParams();
 		
 		nodefdat.setAnomalies(10);
@@ -27,8 +31,7 @@ public class TestMVTSDatasetGenerator {
 		
 		nodefdat.printParams();
 		
-		MVTSDatasetGenerator df = new MVTSDatasetGenerator(12, 20000);
-				
+		// test 3 - print settings, modify and print again			
 		df.printParams();
 
 		df.setFeatures(5);
@@ -37,7 +40,8 @@ public class TestMVTSDatasetGenerator {
 		df.setRange(new int[]{20,30});
 
 		df.printParams();
-				
+
+		// test 4 - generate the data set, print the data set, save the data set into a csv (output folder)
 		Vector<Vector<Double>> dataset = df.generateDataset();
 		
 		System.out.println("Dataset");
