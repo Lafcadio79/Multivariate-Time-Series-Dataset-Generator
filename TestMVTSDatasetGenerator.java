@@ -11,7 +11,8 @@ import java.util.Random;
 public class TestMVTSDatasetGenerator {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		// scanner object is introduced for praxis (but useless in the end cause no input is provided) 
 		Scanner in = new Scanner(System.in);
 		
 		// create the objects
