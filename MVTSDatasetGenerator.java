@@ -25,14 +25,14 @@
    * 
    * 
    * @description: 	The class provides constructors and methods to generate
-   * 				synthetic data sets of multi-variate time series 
-   * 				with/without anomalies.
-   * 				The random class is used to introduce the right percentage 
-   * 				of aleatority to the generation of the signals.
-   * 				Temporal patterns have been modeled based on trigonometric 
-   * 				functions, randomly selected feature by feature.
-   * 				In order to reproduce the anomalies, a little noise is added
-   * 				to the synthetic signals generated.
+   * 			synthetic data sets of multi-variate time series 
+   * 			with/without anomalies.
+   * 			The random class is used to introduce the right percentage 
+   * 			of aleatority to the generation of the signals.
+   * 			Temporal patterns have been modeled based on trigonometric 
+   * 			functions, randomly selected feature by feature.
+   * 			In order to reproduce the anomalies, a little noise is added
+   * 			to the synthetic signals generated.
    *  
    */
 
@@ -44,16 +44,17 @@
   import java.nio.file.Files;
   import java.nio.file.Paths;
   import java.nio.file.StandardCopyOption;
+
   public class MVTSDatasetGenerator{
 
 	/**
 	 * 
 	 * private global variables
 	 * 
-  	 * 	@param features: 		(int) number of channels/features of the data set (default value 30)
-  	 *  @param sequenceLength:  (int) number of temporal observations per channel/feature (default value 20000)
-  	 *  @param anomalies:		(int) number of anomalies to be added to the data set (default value: 0)
-  	 *  @param range:			(int[2]) duration range of each anomaly [min, max] (default value: {30, 90})
+  	 *  @param features: 		(int) number of channels/features of the data set 	  (default value 30)
+  	 *  @param sequenceLength:  	(int) number of temporal observations per channel/feature (default value 20000)
+  	 *  @param anomalies:		(int) number of anomalies to be added to the data set 	  (default value: 0)
+  	 *  @param range:		(int[2]) duration range of each anomaly [min, max] 	  (default value: {30, 90})
   	 *  
 	 */
 	private int features = 30;
@@ -69,10 +70,10 @@
   	 * 
   	 *  constructor for data sets with anomalies
   	 * 
-  	 * 	@param features: 		(int) number of channels/features of the data set 			(default value: 30)
-  	 *  @param sequenceLength: 	(int) number of temporal observations per channel/feature 	(default value: 20000)
-  	 *  @param anomalies:		(int) number of anomalies to be added to the data set 		(default value: 0)
-  	 *  @param range:			(int[2]) duration range of each anomaly [min, max] 			(default value: {30, 90})
+  	 *  @param features: 		(int) number of channels/features of the data set 	  (default value: 30)
+  	 *  @param sequenceLength: 	(int) number of temporal observations per channel/feature (default value: 20000)
+  	 *  @param anomalies:		(int) number of anomalies to be added to the data set 	  (default value: 0)
+  	 *  @param range:			(int[2]) duration range of each anomaly [min, max](default value: {30, 90})
   	 *  
   	 */
   	public MVTSDatasetGenerator(int features, int sequenceLength, int anomalies, int[] range) {
@@ -85,7 +86,7 @@
   	 * 
   	 *  constructor for data sets with no anomaly
   	 * 
-  	 * 	@param features: 		(int) number of channels/features of the data set 			(default value 30)
+  	 *  @param features: 		(int) number of channels/features of the data set 		(default value 30)
   	 *  @param sequenceLength: 	(int) number of temporal observations per channel/feature 	(default value 20000)
   	 * 
   	 */
@@ -196,7 +197,7 @@
   	 *  the time series is randomly generated on the basis of a coin toss strategy 
   	 *  that leverages the 0/1 variable sRand: 
   	 *  	- when sRand is 0 the time series is computed as sin[(t-t0)/w] + lambda * epsilon
-  	 *		- when sRand is 1 the time series is computed as cos[(t-t0)/w] + lambda * epsilon
+  	 *	- when sRand is 1 the time series is computed as cos[(t-t0)/w] + lambda * epsilon
   	 *  
   	 *  @return the time series (Vector of Double) 
   	 *  
@@ -341,7 +342,7 @@
   	 *  method that allows to save the data set into a csv file
   	 *  
   	 *  @param filename (String) the name of the dataset without extension
-  	 *  @param dataset  ((Vector of Vectors of Double)) the data set generated 
+  	 *  @param dataset  (Vector of Vectors of Double) the data set generated 
   	 *  
   	 */
   	public void saveDataset(String filename, Vector<Vector<Double>> dataset) {
